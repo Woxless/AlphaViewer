@@ -1,0 +1,20 @@
+{
+  "name": "alphaviewer",
+  "version": "1.0.0",
+  "description": "AlphaViewer is a crossplatform application for view and use wallpaper from alphacoders.com. ",
+  "main": "./src/app.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wickinats/AlphaViewer.git"
+  },
+  "author": "Wickinats (wickinats@ya.ru)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Wickinats/AlphaViewer/issues"
+  },
+  "homepage": "https://github.com/Wickinats/AlphaViewer#readme"
+}
