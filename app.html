@@ -10,31 +10,48 @@
     <link rel="stylesheet" href="./src/styles/app.css">
   </head>
   <body>
-    <div class="container-fluid">
+    <div id="app" class="container-fluid">
       <div class="row">
         <div id="search-tab" class="col-9 block">
           <form v-on:submit.prevent="toSearch">
-            <input v-model="search" type="search" placeholder="Do you wanna pie?">
+            <input class="input" v-model="search" type="search" placeholder="Do you wanna pie?" maxlength="128">
           </form>
         </div>
       </div>
       <div class="row">
         <div id="wallpaper-info-tab" class="col-4 block">
-
+          <div class="info">
+            <div v-bind:style='{ backgroundImage: "url(" + wallpaper.thumb + ")", }' id="main-thumb"></div>
+            <h3>{{ wallpaper.h + " x " + wallpaper.w }}</h3>
+            <input type="button" name="" value="Set as Wallpaper">
+            <input type="button" name="" value="Download">
+          </div>
         </div>
         <div id="wallpaper-tab" class="col-8">
-          <h1>h12</h1>
+          <div class="d-flex align-content-end flex-wrap">
+            <div v-on:click="getInfo({
+              image: wallpaper.url_image,
+              thumb: wallpaper.url_thumb,
+              page: wallpaper.url_page,
+              h: wallpaper.height,
+              w: wallpaper.width
+            })" v-for="(wallpaper, index) in wallpapers" v-bind:key="index" class="col-3 image block">
+              <img v-bind:src="wallpaper.url_thumb" alt="">
+            </div>
+          </div>
         </div>
       </div>
       <div id="fixed-btns" class="row block">
-        <!--
-          Finish him!
-        -->
+        <img v-on:click="goNav('left')" src="./node_modules/bootstrap-icons/icons/play.svg" alt="left">
+        <form v-on:submit.prevent="goTo">
+          <input class="input" v-model="page" type="text" v-bind:placeholder="pageNumber" maxlength="3">
+        </form>
+        <img v-on:click="goNav('right')" src="./node_modules/bootstrap-icons/icons/play.svg" alt="right">
       </div>
     </div>
 
     <script src="http://localhost:35729/livereload.js" type="text/javascript"></script>
     <script src="./src/vue.js" type="text/javascript"></script>
-    <script src="./src/scripts/vue-search.js" type="text/javascript"></script>
+    <script src="./src/scripts/vue-components.js" type="text/javascript"></script>
   </body>
 </html>

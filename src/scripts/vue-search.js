@@ -6,7 +6,6 @@ var search = new Vue({
   methods: {
     toSearch: function() {
       alert(this.search);
-      return false;
     }
   }
 })
