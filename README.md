@@ -12,7 +12,7 @@ git clone https://github.com/Wickinats/AlphaViewer.git
 cd AlphaViewer
 npm install
 
-# It is not all.
+# It is not all. Now just run "index.html" in a browser.
 ```
 
 ## Tasks:
