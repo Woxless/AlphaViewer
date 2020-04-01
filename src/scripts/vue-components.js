@@ -18,11 +18,9 @@ var search = new Vue({
     ],
     isWallpaper: false,
     wallpaper: {
-      thumb: "./src/assets/preset.gif",
-      h: "Hello",
-      w: "Friends"
+      thumb: "./src/assets/preset.png",
+      wxh: "~ Neko is rule ~"
     },
-    pageNumber: 1,
     page: 1
   },
   methods: {
@@ -30,13 +28,13 @@ var search = new Vue({
       alert(this.search);
     },
     goTo: function() {
-      alert(this.pageNumber);
+      alert(this.page);
     },
     goNav: function(type) {
       if(type == "left"){
-        this.pageNumber = this.pageNumber - 1;
+        this.page = this.page - 1;
       } else {
-        this.pageNumber = this.pageNumber + 1;
+        this.page = this.page + 1;
       }
     },
     getInfo: function (wallpaper) {

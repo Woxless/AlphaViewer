@@ -22,7 +22,7 @@
         <div id="wallpaper-info-tab" class="col-4 block">
           <div class="info">
             <div v-bind:style='{ backgroundImage: "url(" + wallpaper.thumb + ")", }' id="main-thumb"></div>
-            <h3>{{ wallpaper.h + " x " + wallpaper.w }}</h3>
+            <h3>{{ wallpaper.wxh }}</h3>
             <input type="button" name="" value="Set as Wallpaper">
             <input type="button" name="" value="Download">
           </div>
@@ -33,8 +33,7 @@
               image: wallpaper.url_image,
               thumb: wallpaper.url_thumb,
               page: wallpaper.url_page,
-              h: wallpaper.height,
-              w: wallpaper.width
+              wxh: wallpaper.width + ' x ' + wallpaper.height
             })" v-for="(wallpaper, index) in wallpapers" v-bind:key="index" class="col-3 image block">
               <img v-bind:src="wallpaper.url_thumb" alt="">
             </div>
@@ -44,13 +43,12 @@
       <div id="fixed-btns" class="row block">
         <img v-on:click="goNav('left')" src="./node_modules/bootstrap-icons/icons/play.svg" alt="left">
         <form v-on:submit.prevent="goTo">
-          <input class="input" v-model="page" type="text" v-bind:placeholder="pageNumber" maxlength="3">
+          <input class="input" v-model.number="page" type="text" maxlength="3">
         </form>
         <img v-on:click="goNav('right')" src="./node_modules/bootstrap-icons/icons/play.svg" alt="right">
       </div>
     </div>
 
-    <script src="http://localhost:35729/livereload.js" type="text/javascript"></script>
     <script src="./src/vue.js" type="text/javascript"></script>
     <script src="./src/scripts/vue-components.js" type="text/javascript"></script>
   </body>
