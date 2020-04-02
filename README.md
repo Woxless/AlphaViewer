@@ -17,13 +17,12 @@ $ npm install
 # Run Application
 $ npm run electron
 
-# It is not all. Now just run "index.html" in a browser.
 ```
 
 ## Tasks:
 
 - [x] Create a interactive gui-interface with VueJS.
 - [x] Create a simple ElectronJs scripts.
-- [ ] Create NodeJS scripts for a working with API of alphacoders.com.
+- [x] Create NodeJS scripts for a working with API of alphacoders.com.
 - [ ] Create NodeJS scripts for working with filesystem on different platforms.
 - [ ] Catch the platypus perry.
