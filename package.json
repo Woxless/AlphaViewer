@@ -1,26 +1,60 @@
 {
-  "name": "alphaviewer",
-  "version": "1.0.0",
-  "description": "AlphaViewer is a crossplatform application for view and use wallpaper from alphacoders.com. ",
-  "main": "app.js",
+  "name": "AlphaViewer",
+  "main": "electron.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "electron": "vue-cli-service build; electron ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Wickinats/AlphaViewer.git"
-  },
-  "author": "Wickinats (wickinats@ya.ru)",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/Wickinats/AlphaViewer/issues"
-  },
-  "homepage": "https://github.com/Wickinats/AlphaViewer#readme",
   "dependencies": {
-    "bootstrap-icons": "^1.0.0-alpha3"
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "bootstrap-vue": "^2.9.0",
+    "core-js": "^3.6.4",
+    "vue": "^2.6.11",
+    "vue-axios": "^2.1.5",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "electron": "^8.2.0"
+    "@vue/cli-plugin-babel": "~4.2.0",
+    "@vue/cli-plugin-eslint": "~4.2.0",
+    "@vue/cli-plugin-vuex": "~4.2.0",
+    "@vue/cli-service": "~4.2.0",
+    "babel-eslint": "^10.0.3",
+    "electron": "^8.2.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.1.2",
+    "lint-staged": "^9.5.0",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
   }
 }

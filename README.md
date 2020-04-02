@@ -8,9 +8,14 @@ AlphaViewer is a crossplatform application for view and use wallpaper from alpha
 
 ## Build:
 ```bash
-git clone https://github.com/Wickinats/AlphaViewer.git
-cd AlphaViewer
-npm install
+# Clone repository
+$ git clone https://github.com/Wickinats/AlphaViewer.git
+# Change folder
+$ cd AlphaViewer
+# Install dependencies
+$ npm install
+# Run Application
+$ npm run electron
 
 # It is not all. Now just run "index.html" in a browser.
 ```
@@ -18,7 +23,7 @@ npm install
 ## Tasks:
 
 - [x] Create a interactive gui-interface with VueJS.
-- [ ] Create a simple ElectronJs scripts.
+- [x] Create a simple ElectronJs scripts.
 - [ ] Create NodeJS scripts for a working with API of alphacoders.com.
 - [ ] Create NodeJS scripts for working with filesystem on different platforms.
 - [ ] Catch the platypus perry.
