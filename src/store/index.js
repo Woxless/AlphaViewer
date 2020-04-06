@@ -5,55 +5,58 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    api_url: "https://wall.alphacoders.com/api2.0/get.php",
-    api_key: "388a6788ee9df19ff0abc683bd297df3",
-    search_input: "",
-    page: 1,
-    is_Search: false,
-    wallpapers: [],
-    wallpaper_index: 0
+    apiURL: "https://wall.alphacoders.com/api2.0/get.php?auth=388a6788ee9df19ff0abc683bd297df3&method=search&term=",
+
+    searchPages: 1,
+    isClick: true,
+    searchInput: "",
+    wallpapers: []
   },
-  mutations: {
-    set_search_input: (state, value) => {
-      state.search_input = value;
-    },
-    set_page: (state, value) => {
-      state.page = value;
-    },
-    set_Wall: (state, response) => {
-      state.wallpapers = response.data.wallpapers;
-    },
-    set_is_Search: (state, value) => {
-      state.is_Search = value;
-    },
-    set_wallpaper_index: (state, value) => {
-      state.wallpaper_index = value;
-    }
-  },
-  actions: {
-  },
+
   getters: {
-    set_search_input: (state) => {
-      return state.search_input
+    get_searchInput(state) {
+      return state.searchInput;
     },
-    get_page: (state)=>{
-      return state.page;
+
+    get_apiURL(state) {
+      return state.apiURL;
     },
-    get_Wall: (state)=>{
-      return state.wallpapers;
-    },
-    get_API: (state)=>{
+
+    get_wallpapers(state) {
       return {
-        url: state.api_url,
-        key: state.api_key
+        wallpapers: state.wallpapers,
+        searchPages: state.searchPages
       }
     },
-    get_is_Search: (state) => {
-      return state.is_Search;
-    },
-    get_wallpaper_index: (state) => {
-      return state.wallpaper_index;
+
+    get_isClick(state) {
+      return state.isClick;
     }
+  },
+  mutations: {
+    clear_apiURL(state) {
+      state.apiURL = "https://wall.alphacoders.com/api2.0/get.php?auth=388a6788ee9df19ff0abc683bd297df3&method=search&term=";
+    },
+
+    set_apiURL(state) {
+      state.apiURL = state.apiURL + state.searchInput + "&page=1";
+    },
+
+    set_searchInput(state, value) {
+      state.searchInput = value;
+    },
+
+    set_wallpapers(state, walls, pages) {
+      state.wallpapers = walls;
+      state.searchPages = pages;
+    },
+
+    set_isClick(state) {
+      state.isClick = !(state.isClick);
+    }
+  },
+
+  actions: {
   },
   modules: {
   }

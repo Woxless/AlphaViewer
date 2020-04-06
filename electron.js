@@ -11,6 +11,7 @@ function createWindow () {
 
   win.setMenu(null);
   win.loadFile('./dist/index.html');
+    win.webContents.openDevTools()
 }
 
 app.whenReady().then(createWindow)

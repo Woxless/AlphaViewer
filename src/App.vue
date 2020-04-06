@@ -1,36 +1,30 @@
 <template>
-  <div id="app">
-    <div class="container-fluid">
-      <Search />
-      <Wallpapers />
-      <PageNavigator />
-      <WallpaperInfo />
-    </div>
+  <div id="app" >
+    <b-container fluid>
+      <SearchBar />
+      <WallpaperBar />
+      <InfoBar />
+      <NavBar />
+    </b-container>
   </div>
 </template>
 
 <script>
-import Search from "@/components/Search.vue";
-import WallpaperInfo from "@/components/WallpaperInfo.vue";
-import PageNavigator from "@/components/PageNavigator.vue";
-import Wallpapers from "@/components/Wallpapers.vue";
+import SearchBar from "./components/SearchBar.vue";
+import InfoBar from "./components/InfoBar.vue";
+import NavBar from "./components/NavBar.vue";
+import WallpaperBar from "./components/WallpaperBar.vue";
+
 
 export default {
   name: 'App',
   components: {
-    Search, WallpaperInfo,
-    PageNavigator, Wallpapers
+    SearchBar, InfoBar,
+    NavBar, WallpaperBar
   }
 }
 </script>
 
-<style lang="css">
-  body { overflow: hidden; }
-
-  input:focus { outline: none; }
-
-  input::-webkit-search-decoration,
-  input::-webkit-search-cancel-button,
-  input::-webkit-search-results-button,
-  input::-webkit-search-results-decoration { display: none; }
+<style>
+  @import "./styles/basic.css";
 </style>
