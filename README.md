@@ -3,7 +3,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/contains-cat-gifs.svg)](https://forthebadge.com)
 
-# alphaviewer
+# AlphaViewer
 It is a simple and crossplatform application for search and download images from website AlphaCoders.com in one click. Seriosly, it is very easy. Do you still not believe me? Then the cats are already coming to you.
 
 ## What do you get from this app?
