@@ -1,7 +1,6 @@
 ![Image alt](https://raw.githubusercontent.com/Wickinats/AlphaViewer/master/GUI.png)
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-
 [![forthebadge](https://forthebadge.com/images/badges/contains-cat-gifs.svg)](https://forthebadge.com)
 
 # alphaviewer
