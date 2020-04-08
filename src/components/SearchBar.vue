@@ -4,7 +4,7 @@
       <form v-on:submit.prevent="search">
         <b-input-group prepend="search">
           <b-input id="inline-form-input-username" placeholder="Do you wanna pie?"
-                    v-model="searchModel" autocomplete="off"/>
+                    v-model="searchModel" autocomplete="off" maxlength="128" />
         </b-input-group>
       </form>
     </b-col>
@@ -26,11 +26,16 @@
 
     methods: {
       search() {
+        document.getElementById("walls").scroll(0,0)
+
+        this.$store.commit("set_wallID", 0);
+        this.$store.commit("changeLoader");
         this.$store.commit("set_apiURL");
 
-        this.get(this.$store.getters.get_apiURL, this.$store);
+        this.get(this.$store.getters.get_apiURL);
 
         this.$store.commit("clear_apiURL");
+        setTimeout(this.$store.commit, 1000, "changeLoader");
       }
     }
   }

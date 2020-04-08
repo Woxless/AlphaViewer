@@ -1,5 +1,6 @@
 {
   "name": "alphaviewer",
+  "productName": "AlphaViewer",
   "main": "electron.js",
   "version": "0.1.0",
   "private": true,
@@ -8,7 +9,11 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "electron": "vue-cli-service build; electron .",
-    "dist": "electron-packager . electron-tutorial-app --overwrite --asar=true --platform=linux --arch=ia32 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
+    "linux64Build": "electron-packager . AlphaViewer --overwrite --asar=true --platform=linux --arch=x64 --icon=/src/assets/logo.png --prune=true --out=release-builds",
+    "linux32Build": "electron-packager . AlphaViewer --overwrite --asar=true --platform=linux --arch=ia32 --icon=/src/assets/logo.png --prune=true --out=release-builds",
+    "win64Build": "electron-packager . AlphaViewer --overwrite --asar=true --platform=win32 --arch=x64 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds",
+    "win32Build": "electron-packager . AlphaViewer --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds",
+    "buildAll": "npm run linux64Build; npm run linux32Build; npm run win64Build; npm run win32Build"
   },
   "dependencies": {
     "axios": "^0.19.2",
